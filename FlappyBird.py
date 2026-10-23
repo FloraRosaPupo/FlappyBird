@@ -1,9 +1,11 @@
 import pygame
+from pathlib import Path
+ASSET_DIR = Path(__file__).resolve().parent / "imagens"
 import os
 import random
 
 TELA_LARGURA = 500
-TELA_ALTURA = 800   
+TELA_ALTURA = 800
 
 IMAGEM_CANO = pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'pipe.png')))
 IMAGEM_CHAO = pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'base.png')))
@@ -200,7 +202,7 @@ def main():
         for passaro in passaros:
             passaro.mover()
         chao.mover()
-  
+
         adicionar_cano = False
         remover_canos = []
         for cano in canos:
